@@ -182,3 +182,36 @@ body::before {
     filter: grayscale(0%);
     transform: scale(1.2);
 }
+
+/* Your existing CSS */
+
+/* Add a media query to apply styles when the screen width is below a certain threshold */
+@media (max-width: 700px) {
+    /* Disable formatting and background effects */
+  
+    /* Example: Remove the background color and set text color to black */
+    body {
+      background-color: #000;
+      color: aliceblue;
+    }
+  
+    /* Flex sections downward */
+    .container {
+      flex-direction: column;
+    }
+  
+    .game-gallery-container {
+      flex-direction:row;
+    }
+  
+    .thumbnails {
+      max-height: none; /* Remove the max-height restriction */
+      overflow-y: visible; /* Show all thumbnails without scroll */
+    }
+  
+    .main-image-container {
+      max-width: none; /* Remove the max-width restriction */
+      max-height: none; /* Remove the max-height restriction */
+    }
+  }
+  
