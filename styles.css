@@ -11,7 +11,10 @@ body {
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
-    background-color: #000;
+    background-image: url('tempbackground.png');
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
     color: aliceblue;
     font-family: 'PixelFont';
     position: relative;
@@ -21,7 +24,6 @@ body {
 .game-gallery-container {
     display: flex;
 }
-
 
 .thumbnails {
     max-height: 400px;
@@ -57,6 +59,35 @@ body {
 .description {
     margin-top: 10px;
 }
+
+@media (max-width: 700px) {
+    /* Disable formatting and background effects */
+  
+    /* Example: Remove the background color and set text color to black */
+    body {
+      background-color: #000;
+      color: aliceblue;
+    }
+  
+    /* Flex sections downward */
+    .container {
+      flex-direction: column;
+    }
+  
+    .game-gallery-container {
+      flex-direction:row;
+    }
+  
+    .thumbnails {
+      max-height: none; /* Remove the max-height restriction */
+      overflow-y: visible; /* Show all thumbnails without scroll */
+    }
+  
+    .main-image-container {
+      max-width: none; /* Remove the max-width restriction */
+      max-height: none; /* Remove the max-height restriction */
+    }
+  }
 
 
 
@@ -186,32 +217,5 @@ body::before {
 /* Your existing CSS */
 
 /* Add a media query to apply styles when the screen width is below a certain threshold */
-@media (max-width: 700px) {
-    /* Disable formatting and background effects */
-  
-    /* Example: Remove the background color and set text color to black */
-    body {
-      background-color: #000;
-      color: aliceblue;
-    }
-  
-    /* Flex sections downward */
-    .container {
-      flex-direction: column;
-    }
-  
-    .game-gallery-container {
-      flex-direction:row;
-    }
-  
-    .thumbnails {
-      max-height: none; /* Remove the max-height restriction */
-      overflow-y: visible; /* Show all thumbnails without scroll */
-    }
-  
-    .main-image-container {
-      max-width: none; /* Remove the max-width restriction */
-      max-height: none; /* Remove the max-height restriction */
-    }
-  }
+
   
