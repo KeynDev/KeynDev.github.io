@@ -1,221 +1,139 @@
+/* Define the custom font */
 @font-face {
-    font-family: 'PixelFont';
-    src: url('assets/font/INVASION2000.TTF') format('truetype');
+  font-family: 'PixelFont';
+  src: url('assets/font/INVASION2000.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
+/* Body styles */
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url('tempbackground.png');
-    background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-    color: aliceblue;
-    font-family: 'PixelFont';
-    position: relative;
-    overflow: hidden;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+/* Red titles */
+h1, h2, h3, h4 {
+  color: rgba(255, 0, 0, 0.822);
+}
+
+/* Center content */
+main {
+  margin: 0 auto;
+  max-width: 1400px;
+  text-align: center;
+}
+
+/* Style the project cards */
+.projects-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Set a fixed size for the project cards and add a smooth transition */
+.project-card {
+  width: 300px;
+  height: 200px;
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s;
+  border: 2px solid transparent; /* Add a transparent border initially */
+}
+
+/* Set a fixed size for the project images */
+.project-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  transition: opacity 0.3s;
+  display: block;
+}
+
+/* Style the "View Project" links as block buttons with a border */
+.project-details a {
+  display: block;
+  background: red;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background 0.3s, border-color 0.3s; /* Add transition for background and border-color */
+  border: 2px solid transparent; /* Add a transparent border initially */
+}
+
+/* Hover effect for the buttons and border */
+.project-details a:hover {
+  background: darkred;
+  border-color: white; /* Change the border color on hover */
+}
+
+/* Project details styles */
+.project-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Show project details on hover */
+.project-card:hover .project-details {
+  display: block;
+}
+
+
+
+
 
 .game-gallery-container {
-    display: flex;
+  display: flex;
+  flex-direction: row; /* Change flex direction to row */
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
 }
 
 .thumbnails {
-    max-height: 400px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .thumbnail {
-    margin: 5px;
-    cursor: pointer;
-    max-width: 100px;
-    max-height: 75px;
-    border: 2px solid transparent; /* Add a transparent border */
+  margin: 5px;
+  cursor: pointer;
+  max-width: 100px;
+  max-height: 75px;
+  border: 2px solid transparent; /* Add a transparent border */
 }
 
 .thumbnail:hover {
-    border-color: #007bff; /* Change the border color on hover */
+  border-color: #007bff; /* Change the border color on hover */
 }
 
 .main-image-container {
-    text-align: center;
-    max-width: 800px; /* Set a fixed width for the main image container */
-    max-height: 600px; /* Set a fixed height for the main image container */
+  text-align: center;
+  max-width: 800px; /* Set a fixed width for the main image container */
+  max-height: 600px; /* Set a fixed height for the main image container */
 }
 
 .main-image {
-    width: 100%;
-    height: 100%;
-    border: 1px solid #ddd;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
 }
 
 .description {
-    margin-top: 10px;
+  margin-top: 10px;
 }
-
-@media (max-width: 700px) {
-    /* Disable formatting and background effects */
-  
-    /* Example: Remove the background color and set text color to black */
-    body {
-      background-color: #000;
-      color: aliceblue;
-    }
-  
-    /* Flex sections downward */
-    .container {
-      flex-direction: column;
-    }
-  
-    .game-gallery-container {
-      flex-direction:row;
-    }
-  
-    .thumbnails {
-      max-height: none; /* Remove the max-height restriction */
-      overflow-y: visible; /* Show all thumbnails without scroll */
-    }
-  
-    .main-image-container {
-      max-width: none; /* Remove the max-width restriction */
-      max-height: none; /* Remove the max-height restriction */
-    }
-  }
-
-
-
-
-.toppagetitle {
-    font-size: 24px;
-    margin-top: 20px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.toppagetitle a {
-    text-decoration: none;
-    color: #721121; 
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.star {
-    position: absolute;
-    opacity: 0;
-    width: 1px;
-    height: 1px;
-    background-color: #fff;
-    border-radius: 50%;
-    z-index: -1;
-}
-
-@keyframes grow {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    30% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1.5);
-    }
-}
-
-
-.container {
-    text-align: center;
-    max-width: 1200px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.title {
-    font-size: 42px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color:#721121;
-}
-
-.subtitle {
-    font-size: 22px;
-    margin-bottom: 20px;
-    color:#F15156;
-}
-
-.description {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.skills {
-    padding-top: 20px;
-    font-size: 18px;
-    display: flex;
-}
-
-.skill {
-    margin-right: 10px;
-    display: inline;
-    background-color: #000; 
-    padding: 5px 10px;
-    border: 3px solid #ccc; 
-    border-radius: 3px; 
-}
-
-
-.gallery-container {
-    overflow-x: auto; 
-    max-width: 100%; 
-    margin-bottom: 40px;
-}
-
-.gallery {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 15px;
-}
-
-.gallery img {
-    width: 170px;
-    height: 130px;
-    filter: grayscale(100%);
-    transition: filter 0.2s, transform 0.2s;
-    margin: 15px;
-    border-radius: 10px;
-}
-
-.gallery img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.2);
-}
-
-/* Your existing CSS */
-
-/* Add a media query to apply styles when the screen width is below a certain threshold */
-
-  

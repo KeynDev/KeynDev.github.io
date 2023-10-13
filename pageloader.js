@@ -10,9 +10,8 @@ fetch("data.json")
         if (data[queryIdentifier]) {
             const section = data[queryIdentifier];
             // Update content
-            document.getElementById("content").innerHTML = `
+            document.getElementById("project-title").innerHTML = `
                 <div class="title">${section.title}</div>
-                <div class="subtitle">${section.content}</div>
             `;
 
             // Append thumbnails to the "Thumbnails" section
