@@ -27,17 +27,17 @@ body {
 /* Main Parallax container */
 .parallax-container-main {
   height: 100vh;
-  background-image: url('assets/images/D3X/gameplaya.PNG');
-}
-
-/* Social Parallax container */
-.parallax-container-social {
-  height: 30vh;
-  background-image: url('assets/images/D3X/gameplayb.PNG');
+  background-image: url('assets/images/Reboot/gameplaya.PNG');
 }
 
 /* About Parallax container */
 .parallax-container-about {
+  height: 30vh;
+  background-image: url('assets/images/D3X/gameplayb.PNG');
+}
+
+/* Social Parallax container */
+.parallax-container-social {
   height: 30vh;
   background-image: url('assets/images/D3X/gamesettings.PNG');
 }
